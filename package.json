@@ -1,0 +1,71 @@
+{
+  "name": "env-doctor",
+  "version": "0.1.0",
+  "description": "Validate and parse environment variables with a tiny, type-safe schema.",
+  "license": "MIT",
+  "type": "commonjs",
+  "author": "Aditya Tiwari",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "env",
+    "dotenv",
+    "environment",
+    "config",
+    "validation",
+    "schema",
+    "typescript",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<your-github-username>/env-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<your-github-username>/env-doctor/issues"
+  },
+  "homepage": "https://github.com/<your-github-username>/env-doctor#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "ci": "npm run lint && npm run typecheck && npm run test:coverage && npm run build",
+    "prepublishOnly": "npm run ci"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.2.2",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^9.39.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.55.0",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.4"
+  }
+}
