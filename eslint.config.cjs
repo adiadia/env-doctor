@@ -16,7 +16,7 @@ module.exports = [
     files: ["src/**/*.ts", "test/**/*.ts"]
   })),
 
-  // Node environment for TS files (so process/console are known if used)
+  // Shared rules for TS files
   {
     files: ["src/**/*.ts", "test/**/*.ts"],
     languageOptions: {
@@ -29,6 +29,24 @@ module.exports = [
       "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-explicit-any": "off",
       "no-console": "off"
+    }
+  },
+
+  // Node bin scripts (CommonJS) - allow require()
+  {
+    files: ["bin/**/*.cjs"],
+    languageOptions: {
+      globals: {
+        console: "readonly",
+        process: "readonly",
+        __dirname: "readonly",
+        module: "readonly",
+        require: "readonly"
+      }
+    },
+    rules: {
+      "no-undef": "off",
+      "@typescript-eslint/no-require-imports": "off"
     }
   }
 ];

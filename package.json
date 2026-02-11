@@ -1,6 +1,6 @@
 {
   "name": "env-typed-checker",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Validate and parse environment variables with a tiny, type-safe schema.",
   "license": "MIT",
   "type": "commonjs",
@@ -8,6 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "bin": {
+    "env-typed-checker": "./bin/env-typed-checker.cjs"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -17,6 +20,7 @@
   },
   "files": [
     "dist",
+    "bin",
     "README.md",
     "LICENSE"
   ],
