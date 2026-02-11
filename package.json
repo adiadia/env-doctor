@@ -8,6 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "bin": {
+    "env-typed-checker": "./bin/env-typed-checker.cjs"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -17,6 +20,7 @@
   },
   "files": [
     "dist",
+    "bin",
     "README.md",
     "LICENSE"
   ],
